@@ -51,9 +51,9 @@ class Subscriber(object):
 
 
     def subscribe(self, lists):
-        body = '\n'.join(map('SUBSCRIBE {}'.format, lists))
-        print(body)
-        # self.sender.send(body)
+        body = ''.join(map('SUBSCRIBE {}\n'.format, lists))
+        sys.stderr.write(body)
+        self.sender.send(body)
 
 
 def main():
